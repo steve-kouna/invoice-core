@@ -15,6 +15,14 @@ import com.koona.invoise.repository.InvoiceRepositoryInterface;
 public class InvoiceMichelService implements InvoiceServiceInterface {
     
     private static Long lastNumber = 112L;
+
+    public static Long getLastNumber() {
+        return lastNumber;
+    }
+
+    public static void setLastNumber(Long aLastNumber) {
+        lastNumber = aLastNumber;
+    }
     private InvoiceRepositoryInterface invoiceRepository;
     
     
@@ -22,4 +30,13 @@ public class InvoiceMichelService implements InvoiceServiceInterface {
         invoice.setNumber("INV_" + String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
     }
+
+    public InvoiceRepositoryInterface getInvoiceRepository() {
+        return invoiceRepository;
+    }
+
+    public void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository) {
+        this.invoiceRepository = invoiceRepository;
+    }
+    
 }
