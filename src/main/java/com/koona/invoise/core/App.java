@@ -1,6 +1,9 @@
 package com.koona.invoise.core;
 
+import com.koona.invoise.controller.InvoiceController;
+import com.koona.invoise.controller.InvoiceMichelController;
 import com.koona.invoise.entity.Invoice;
+import com.koona.invoise.service.InvoiceMichelService;
 import com.koona.invoise.service.InvoiceService;
 import java.util.Scanner;
 
@@ -11,13 +14,17 @@ import java.util.Scanner;
 public class App 
 {
     public static void main( String[] args )
-    {
-        InvoiceService invoiceService = new InvoiceService();
-        Invoice invoice = new Invoice();
-        System.out.println( "What is customer name : " );
+    {   
         Scanner scanner = new Scanner(System.in);
-        String customerName = scanner.nextLine();
-        invoice.setCustomerName(customerName);
-        invoiceService.create(invoice);
+        System.out.println("Dans quelle configuration etes-vous ?");
+        int conf = scanner.nextInt();
+        
+        if(conf == 1) {
+            InvoiceController invoice = new InvoiceController();
+            invoice.createInvoice();
+        } else if (conf == 2) {
+            InvoiceMichelController invoiceM = new InvoiceMichelController();
+            invoiceM.createInvoice();
+        }
     }
 }

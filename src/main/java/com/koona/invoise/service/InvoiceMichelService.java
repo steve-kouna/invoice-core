@@ -12,14 +12,14 @@ import com.koona.invoise.repository.InvoiceRepositoryInterface;
  *
  * @author Steve KOUNA
  */
-public class InvoiceService implements InvoiceServiceInterface {
+public class InvoiceMichelService implements InvoiceServiceInterface {
     
-    private static Long lastNumber = 0L;
+    private static Long lastNumber = 112L;
     private InvoiceRepositoryInterface invoiceRepository;
-
+    
     
     public void create(Invoice invoice) {
-        invoice.setNumber(String.valueOf(++lastNumber));
+        invoice.setNumber("INV_" + String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
     }
 }
