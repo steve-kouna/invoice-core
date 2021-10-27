@@ -5,10 +5,13 @@
  */
 package com.koona.invoise.controller;
 
+import com.koona.invoise.service.InvoiceServiceInterface;
+
 /**
  *
  * @author Steve KOUNA
  */
 public interface InvoiceControllerInterface {
     void createInvoice();
+    void setInvoiceService(InvoiceServiceInterface invoiceService);
 }

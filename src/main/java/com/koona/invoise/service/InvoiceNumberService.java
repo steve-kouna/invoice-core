@@ -12,7 +12,7 @@ import com.koona.invoise.repository.InvoiceRepositoryInterface;
  *
  * @author Steve KOUNA
  */
-public class InvoiceService implements InvoiceServiceInterface {
+public class InvoiceNumberService implements InvoiceServiceInterface {
     
     private static Long lastNumber = 0L;
 

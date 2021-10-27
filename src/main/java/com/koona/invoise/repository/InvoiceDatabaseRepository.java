@@ -13,13 +13,13 @@ import java.util.List;
  *
  * @author Steve KOUNA
  */
-public class InvoiceRepository implements InvoiceRepositoryInterface {
+public class InvoiceDatabaseRepository  implements InvoiceRepositoryInterface {
     
     private static List<Invoice> invoices = new ArrayList<>();
     
     public void create(Invoice invoice) {
         invoices.add(invoice);
         
-        System.out.println("Invoice addedd with number " + invoice.getNumber() + " for " + invoice.getCustomerName());
+        System.out.println("Database : Invoice addedd with number " + invoice.getNumber() + " for " + invoice.getCustomerName());
     }
 }

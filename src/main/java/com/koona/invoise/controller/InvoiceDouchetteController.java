@@ -12,7 +12,7 @@ import com.koona.invoise.service.InvoiceServiceInterface;
  *
  * @author Steve KOUNA
  */
-public class InvoiceChamboulToutMagasin2Controller  implements InvoiceControllerInterface {
+public class InvoiceDouchetteController  implements InvoiceControllerInterface {
     
     private InvoiceServiceInterface invoiceService;
 

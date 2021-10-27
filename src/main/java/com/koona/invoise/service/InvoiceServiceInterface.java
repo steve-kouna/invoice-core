@@ -6,6 +6,7 @@
 package com.koona.invoise.service;
 
 import com.koona.invoise.entity.Invoice;
+import com.koona.invoise.repository.InvoiceRepositoryInterface;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.koona.invoise.entity.Invoice;
  */
 public interface InvoiceServiceInterface {
     void create(Invoice invoice);
+    void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository);
 }

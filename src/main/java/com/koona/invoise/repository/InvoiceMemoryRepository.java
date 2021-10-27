@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Steve KOUNA
  */
-public class InvoiceMichelRepository  implements InvoiceRepositoryInterface {
+public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
     
     private static List<Invoice> invoices = new ArrayList<>();
     

@@ -6,8 +6,6 @@
 package com.koona.invoise.controller;
 
 import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.service.InvoiceMichelService;
-import com.koona.invoise.service.InvoiceService;
 import com.koona.invoise.service.InvoiceServiceInterface;
 import java.util.Scanner;
 
@@ -15,16 +13,16 @@ import java.util.Scanner;
  *
  * @author Steve KOUNA
  */
-public class InvoiceMichelController implements InvoiceControllerInterface {
+public class InvoiceKeyBoardController implements InvoiceControllerInterface{
     
     private InvoiceServiceInterface invoiceService;
     
     public void createInvoice() {
         Invoice invoice = new Invoice();
         
-//        System.out.println( "What is customer name : " );
-//        Scanner scanner = new Scanner(System.in);
-        String customerName = "Michel";
+        System.out.println( "What is customer name : " );
+        Scanner scanner = new Scanner(System.in);
+        String customerName = scanner.nextLine();
         
         invoice.setCustomerName(customerName);
         invoiceService.create(invoice);
