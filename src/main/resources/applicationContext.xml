@@ -2,16 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    http://www.springframework.org/schema/beans/spring-beans.xsd"
+    default-autowire="byType"
+>
 
-    <bean id="invoiceService" class="com.koona.invoise.service.InvoicePrefixService">
-        <property name="invoiceRepository" ref="invoiceDatabase"/>
+    <bean class="com.koona.invoise.service.InvoicePrefixService">
+<!--        <property name="invoiceRepository" ref="invoiceDatabase"/>-->
         <property name="lastNumber" value="112"/>
         <property name="prefix" value="IMV_"/>
     </bean>
     <bean class="com.koona.invoise.controller.InvoiceWebController">
-        <property name="invoiceService" ref="invoiceService"/>
+        <!--<property name="invoiceService" ref="invoiceService"/>-->
     </bean>
-    <bean id="invoiceDatabase" class="com.koona.invoise.repository.InvoiceDatabaseRepository"/>
+    <bean class="com.koona.invoise.repository.InvoiceDatabaseRepository"/>
 
 </beans>
