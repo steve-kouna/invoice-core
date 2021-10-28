@@ -14,20 +14,21 @@ import com.koona.invoise.repository.InvoiceRepositoryInterface;
  */
 public class InvoicePrefixService implements InvoiceServiceInterface {
     
-    private static Long lastNumber = 112L;
+    private Long lastNumber;
+    private String prefix;
 
-    public static Long getLastNumber() {
+    public Long getLastNumber() {
         return lastNumber;
     }
 
-    public static void setLastNumber(Long aLastNumber) {
+    public void setLastNumber(Long aLastNumber) {
         lastNumber = aLastNumber;
     }
     private InvoiceRepositoryInterface invoiceRepository;
     
     
     public void create(Invoice invoice) {
-        invoice.setNumber("INV_" + String.valueOf(++lastNumber));
+        invoice.setNumber(prefix + String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
     }
 
@@ -37,6 +38,14 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
 
     public void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
     
 }
