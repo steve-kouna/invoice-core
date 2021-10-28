@@ -12,6 +12,8 @@ import com.koona.invoise.service.InvoicePrefixService;
 import com.koona.invoise.service.InvoiceNumberService;
 import com.koona.invoise.service.InvoiceServiceInterface;
 import java.util.Scanner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Hello world!
@@ -21,32 +23,8 @@ public class App
 {
     public static void main( String[] args )
     {   
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("quel est la classe de controller ?");
-        String controllerClass = scanner.nextLine();
-        
-        System.out.println("quel est la classe de service ?");
-        String serviceClass = scanner.nextLine();
-        
-        System.out.println("quel est la classe de repository ?");
-        String repositoryClass = scanner.nextLine();
-        
-        InvoiceControllerInterface invoiceControllerInterface = null;
-        InvoiceServiceInterface invoiceServiceInterface = null;
-        InvoiceRepositoryInterface invoiceRepositoryInterface = null;
-        
-        try {
-            
-        invoiceControllerInterface = (InvoiceControllerInterface) Class.forName(controllerClass).getDeclaredConstructor().newInstance();
-        invoiceServiceInterface = (InvoiceServiceInterface) Class.forName(serviceClass).getDeclaredConstructor().newInstance();
-        invoiceRepositoryInterface = (InvoiceRepositoryInterface) Class.forName(repositoryClass).getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        
-        invoiceControllerInterface.setInvoiceService(invoiceServiceInterface);
-        invoiceServiceInterface.setInvoiceRepository(invoiceRepositoryInterface);
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        InvoiceControllerInterface invoiceControllerInterface = context.getBean(InvoiceControllerInterface.class);
         invoiceControllerInterface.createInvoice();
     }
 }
