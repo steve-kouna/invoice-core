@@ -10,6 +10,7 @@ import com.koona.invoise.service.InvoicePrefixService;
 import com.koona.invoise.service.InvoiceNumberService;
 import com.koona.invoise.service.InvoiceServiceInterface;
 import java.util.Scanner;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -17,6 +18,7 @@ import java.util.Scanner;
  */
 public class InvoiceWebController implements InvoiceControllerInterface {
     
+    @Autowired
     private InvoiceServiceInterface invoiceService;
     
     public void createInvoice() {

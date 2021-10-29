@@ -7,6 +7,7 @@ package com.koona.invoise.service;
 
 import com.koona.invoise.entity.Invoice;
 import com.koona.invoise.repository.InvoiceRepositoryInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -24,6 +25,8 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
     public void setLastNumber(Long aLastNumber) {
         lastNumber = aLastNumber;
     }
+    
+    @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
     
     
