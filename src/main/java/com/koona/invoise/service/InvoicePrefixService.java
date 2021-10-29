@@ -8,6 +8,7 @@ package com.koona.invoise.service;
 import com.koona.invoise.entity.Invoice;
 import com.koona.invoise.repository.InvoiceRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  *
@@ -15,7 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class InvoicePrefixService implements InvoiceServiceInterface {
     
+    @Value("${invoice.lastNumber}")
     private Long lastNumber;
+    
+    @Value("${invoice.prefix}")
     private String prefix;
 
     public Long getLastNumber() {
