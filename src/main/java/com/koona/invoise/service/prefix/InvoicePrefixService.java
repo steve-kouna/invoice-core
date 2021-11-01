@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.service;
+package com.koona.invoise.service.prefix;
 
 import com.koona.invoise.entity.Invoice;
 import com.koona.invoise.repository.InvoiceRepositoryInterface;
+import com.koona.invoise.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Steve KOUNA
  */
+@Service
 public class InvoicePrefixService implements InvoiceServiceInterface {
     
     @Value("${invoice.lastNumber}")

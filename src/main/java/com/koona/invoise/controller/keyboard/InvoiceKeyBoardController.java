@@ -3,24 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.controller;
+package com.koona.invoise.controller.keyboard;
 
+import com.koona.invoise.controller.InvoiceControllerInterface;
 import com.koona.invoise.entity.Invoice;
 import com.koona.invoise.service.InvoiceServiceInterface;
+import java.util.Scanner;
+import org.springframework.stereotype.Controller;
 
 /**
  *
  * @author Steve KOUNA
  */
-public class InvoiceDouchetteController  implements InvoiceControllerInterface {
+@Controller
+public class InvoiceKeyBoardController implements InvoiceControllerInterface{
     
     private InvoiceServiceInterface invoiceService;
-
-    @Override
+    
     public void createInvoice() {
-        System.out.println("Usage of scanner");
         Invoice invoice = new Invoice();
-        invoice.setCustomerName("Virgin Galactic");
+        
+        System.out.println( "What is customer name : " );
+        Scanner scanner = new Scanner(System.in);
+        String customerName = scanner.nextLine();
+        
+        invoice.setCustomerName(customerName);
         invoiceService.create(invoice);
     }
 
