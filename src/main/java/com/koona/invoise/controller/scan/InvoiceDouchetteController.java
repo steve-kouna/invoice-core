@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
  *
  * @author Steve KOUNA
  */
-@Controller
+//@Controller
 public class InvoiceDouchetteController  implements InvoiceControllerInterface {
     
     private InvoiceServiceInterface invoiceService;

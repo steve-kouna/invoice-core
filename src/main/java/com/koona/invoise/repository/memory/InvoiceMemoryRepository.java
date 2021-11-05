@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author Steve KOUNA
  */
-@Repository
+//@Repository
 public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
     
     private static List<Invoice> invoices = new ArrayList<>();

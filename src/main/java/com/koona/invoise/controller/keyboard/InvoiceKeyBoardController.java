@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
  *
  * @author Steve KOUNA
  */
-@Controller
+//@Controller
 public class InvoiceKeyBoardController implements InvoiceControllerInterface{
     
     private InvoiceServiceInterface invoiceService;
