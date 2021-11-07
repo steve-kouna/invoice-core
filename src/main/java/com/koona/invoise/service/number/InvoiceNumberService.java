@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  *
  * @author Steve KOUNA
  */
-@Service
+//@Service
 public class InvoiceNumberService implements InvoiceServiceInterface {
     
     private static Long lastNumber = 0L;
