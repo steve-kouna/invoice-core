@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.service.number;
+package com.koona.invoise.core.service.number;
 
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.repository.InvoiceRepositoryInterface;
-import com.koona.invoise.service.InvoiceServiceInterface;
-import org.springframework.stereotype.Service;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
+import com.koona.invoise.core.service.InvoiceServiceInterface;
+
+import java.util.List;
 
 /**
  *
@@ -41,6 +42,9 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
     public void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
     }
-    
-    
+
+    @Override
+    public List<Invoice> getInvoiceList() {
+        return invoiceRepository.list();
+    }
 }

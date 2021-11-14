@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.controller.scan;
+package com.koona.invoise.core.controller.scan;
 
-import com.koona.invoise.controller.InvoiceControllerInterface;
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.service.InvoiceServiceInterface;
-import org.springframework.stereotype.Controller;
+import com.koona.invoise.core.controller.InvoiceControllerInterface;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.service.InvoiceServiceInterface;
 
 /**
  *

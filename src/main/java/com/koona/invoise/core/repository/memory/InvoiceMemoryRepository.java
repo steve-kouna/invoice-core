@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.repository.memory;
+package com.koona.invoise.core.repository.memory;
 
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.repository.InvoiceRepositoryInterface;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Repository;
 
 /**
  *
@@ -24,5 +23,10 @@ public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
         invoices.add(invoice);
         
         System.out.println("Invoice addedd with number " + invoice.getNumber() + " for " + invoice.getCustomerName());
+    }
+
+    @Override
+    public List<Invoice> list() {
+        return null;
     }
 }

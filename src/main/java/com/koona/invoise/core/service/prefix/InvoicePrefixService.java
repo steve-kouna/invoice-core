@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.service.prefix;
+package com.koona.invoise.core.service.prefix;
 
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.repository.InvoiceRepositoryInterface;
-import com.koona.invoise.service.InvoiceServiceInterface;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
+import com.koona.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  *
@@ -57,5 +59,9 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
-    
+
+    @Override
+    public List<Invoice> getInvoiceList() {
+        return invoiceRepository.list();
+    }
 }

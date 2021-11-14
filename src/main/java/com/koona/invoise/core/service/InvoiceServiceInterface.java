@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.service;
+package com.koona.invoise.core.service;
 
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.repository.InvoiceRepositoryInterface;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
+
+import java.util.List;
 
 /**
  *
@@ -15,4 +17,5 @@ import com.koona.invoise.repository.InvoiceRepositoryInterface;
 public interface InvoiceServiceInterface {
     void create(Invoice invoice);
     void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository);
+    List<Invoice> getInvoiceList();
 }

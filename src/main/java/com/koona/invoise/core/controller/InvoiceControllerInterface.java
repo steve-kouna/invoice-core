@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.controller;
+package com.koona.invoise.core.controller;
 
-import com.koona.invoise.service.InvoiceServiceInterface;
+import com.koona.invoise.core.service.InvoiceServiceInterface;
 
 /**
  *

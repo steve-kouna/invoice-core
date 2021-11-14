@@ -10,8 +10,8 @@
     
     <context:property-placeholder location="classpath:application.properties"/>
     
-    <context:component-scan base-package="com.koona.invoise.service.prefix"/>
-    <context:component-scan base-package="com.koona.invoise.controller.web"/>
-    <context:component-scan base-package="com.koona.invoise.repository.memory"/>
+    <context:component-scan base-package="com.koona.invoise.core.service.prefix"/>
+    <context:component-scan base-package="com.koona.invoise.core.controller.web"/>
+    <context:component-scan base-package="com.koona.invoise.core.repository.memory"/>
 
 </beans>

@@ -3,33 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.koona.invoise.controller.web;
+package com.koona.invoise.core.controller.keyboard;
 
-import com.koona.invoise.controller.InvoiceControllerInterface;
-import com.koona.invoise.entity.Invoice;
-import com.koona.invoise.service.prefix.InvoicePrefixService;
-import com.koona.invoise.service.number.InvoiceNumberService;
-import com.koona.invoise.service.InvoiceServiceInterface;
+import com.koona.invoise.core.controller.InvoiceControllerInterface;
+import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.service.InvoiceServiceInterface;
 import java.util.Scanner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
 /**
  *
  * @author Steve KOUNA
  */
-@Controller
-public class InvoiceWebController implements InvoiceControllerInterface {
+//@Controller
+public class InvoiceKeyBoardController implements InvoiceControllerInterface{
     
-    @Autowired
     private InvoiceServiceInterface invoiceService;
     
     public void createInvoice() {
         Invoice invoice = new Invoice();
         
-//        System.out.println( "What is customer name : " );
-//        Scanner scanner = new Scanner(System.in);
-        String customerName = "Michel";
+        System.out.println( "What is customer name : " );
+        Scanner scanner = new Scanner(System.in);
+        String customerName = scanner.nextLine();
         
         invoice.setCustomerName(customerName);
         invoiceService.create(invoice);
