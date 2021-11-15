@@ -5,6 +5,7 @@
  */
 package com.koona.invoise.core.controller;
 
+import com.koona.invoise.core.entity.Invoice;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
 
 /**
@@ -12,6 +13,6 @@ import com.koona.invoise.core.service.InvoiceServiceInterface;
  * @author Steve KOUNA
  */
 public interface InvoiceControllerInterface {
-    void createInvoice();
+    String createInvoice(Invoice invoice);
     void setInvoiceService(InvoiceServiceInterface invoiceService);
 }
