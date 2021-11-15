@@ -60,12 +60,10 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
         this.prefix = prefix;
     }
 
-    @Override
     public List<Invoice> getInvoiceList() {
         return invoiceRepository.list();
     }
 
-    @Override
     public Invoice getInvoiceByNumber(String number) {
         return this.invoiceRepository.getById(number);
     }

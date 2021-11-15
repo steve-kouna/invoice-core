@@ -43,12 +43,10 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
         this.invoiceRepository = invoiceRepository;
     }
 
-    @Override
     public List<Invoice> getInvoiceList() {
         return invoiceRepository.list();
     }
 
-    @Override
     public Invoice getInvoiceByNumber(String number) {
         return this.invoiceRepository.getById(number);
     }
