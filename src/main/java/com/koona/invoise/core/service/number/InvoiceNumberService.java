@@ -8,6 +8,8 @@ package com.koona.invoise.core.service.number;
 import com.koona.invoise.core.entity.Invoice;
 import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -27,11 +29,12 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
     public static void setLastNumber(Long aLastNumber) {
         lastNumber = aLastNumber;
     }
+
+//    @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
 
     
     public Invoice create(Invoice invoice) {
-        invoice.setNumber(String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
 
         return invoice;

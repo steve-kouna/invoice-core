@@ -14,7 +14,7 @@ import java.util.List;
  * @author Steve KOUNA
  */
 public interface InvoiceRepositoryInterface {
-    void create(Invoice invoice);
+    Invoice create(Invoice invoice);
     List<Invoice> list();
     Invoice getById(String number);
 }

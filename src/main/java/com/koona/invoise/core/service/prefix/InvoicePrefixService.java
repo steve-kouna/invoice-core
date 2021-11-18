@@ -40,7 +40,6 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
     
     
     public Invoice create(Invoice invoice) {
-        invoice.setNumber(prefix + String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
         return invoice;
     }
