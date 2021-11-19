@@ -5,13 +5,23 @@
  */
 package com.koona.invoise.core.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+
 /**
  *
  * @author Steve KOUNA
  */
 public class Invoice {
+
+    @Id
+    @Column("invoice_number")
     private String number;
+
+    @Column("customer_name")
     private String customerName;
+
+    @Column("order_number")
     private String orderNumber;
 
     public Invoice() {

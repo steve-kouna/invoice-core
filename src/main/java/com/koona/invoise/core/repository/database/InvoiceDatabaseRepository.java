@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.koona.invoise.core.repository.database;
-
+/*
 import com.koona.invoise.core.entity.Invoice;
 import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 
@@ -19,10 +19,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Steve KOUNA
- */
 @Repository
 public class InvoiceDatabaseRepository  implements InvoiceRepositoryInterface {
     @Autowired
@@ -62,3 +58,5 @@ public class InvoiceDatabaseRepository  implements InvoiceRepositoryInterface {
         );
     }
 }
+
+ */

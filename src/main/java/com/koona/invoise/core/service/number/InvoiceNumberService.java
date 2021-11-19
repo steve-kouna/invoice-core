@@ -35,7 +35,7 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
 
     
     public Invoice create(Invoice invoice) {
-        invoiceRepository.create(invoice);
+        invoiceRepository.save(invoice);
 
         return invoice;
     }
@@ -48,11 +48,11 @@ public class InvoiceNumberService implements InvoiceServiceInterface {
         this.invoiceRepository = invoiceRepository;
     }
 
-    public List<Invoice> getInvoiceList() {
-        return invoiceRepository.list();
+    public Iterable<Invoice> getInvoiceList() {
+        return invoiceRepository.findAll();
     }
 
     public Invoice getInvoiceByNumber(String number) {
-        return this.invoiceRepository.getById(number);
+        return this.invoiceRepository.findById(number).orElseThrow();
     }
 }
