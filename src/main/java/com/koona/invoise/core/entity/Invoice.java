@@ -5,23 +5,25 @@
  */
 package com.koona.invoise.core.entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
+
+import javax.persistence.*;
 
 /**
  *
  * @author Steve KOUNA
  */
+@Entity
 public class Invoice {
 
     @Id
-    @Column("invoice_number")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "invoice_number")
     private String number;
 
-    @Column("customer_name")
+    @Column(name = "customer_name")
     private String customerName;
 
-    @Column("order_number")
+    @Column(name = "order_number")
     private String orderNumber;
 
     public Invoice() {
