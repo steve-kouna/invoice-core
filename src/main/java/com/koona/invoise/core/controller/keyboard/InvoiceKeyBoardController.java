@@ -6,6 +6,7 @@
 package com.koona.invoise.core.controller.keyboard;
 
 import com.koona.invoise.core.controller.InvoiceControllerInterface;
+import com.koona.invoise.core.entity.Customer;
 import com.koona.invoise.core.entity.Invoice;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
 import java.util.Scanner;
@@ -24,8 +25,11 @@ public class InvoiceKeyBoardController implements InvoiceControllerInterface{
         System.out.println( "What is customer name : " );
         Scanner scanner = new Scanner(System.in);
         String customerName = scanner.nextLine();
+
+        Customer customer = new Customer();
+        customer.setName(customerName);
         
-        invoice.setCustomerName(customerName);
+        invoice.setCustomer(customer);
         invoiceService.create(invoice);
         return "";
     }

@@ -23,7 +23,7 @@ public class InvoiceMemoryRepository implements InvoiceRepositoryInterface {
     public Invoice save(Invoice invoice) {
         invoices.add(invoice);
         
-        System.out.println("Invoice addedd with number " + invoice.getNumber() + " for " + invoice.getCustomerName());
+        System.out.println("Invoice addedd with number " + invoice.getNumber() + " for " + invoice.getCustomer().getName());
 
         return invoice;
     }

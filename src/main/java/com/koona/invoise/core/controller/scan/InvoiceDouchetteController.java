@@ -6,6 +6,7 @@
 package com.koona.invoise.core.controller.scan;
 
 import com.koona.invoise.core.controller.InvoiceControllerInterface;
+import com.koona.invoise.core.entity.Customer;
 import com.koona.invoise.core.entity.Invoice;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
 
@@ -22,7 +23,11 @@ public class InvoiceDouchetteController  implements InvoiceControllerInterface {
     public String createInvoice(Invoice invoice) {
         invoice = new Invoice();
         System.out.println("Usage of scanner");
-        invoice.setCustomerName("Virgin Galactic");
+
+        Customer customer = new Customer();
+        customer.setName("Virgin Galactic");
+
+        invoice.setCustomer(customer);
         invoiceService.create(invoice);
         return "";
     }
