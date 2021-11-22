@@ -5,20 +5,16 @@
  */
 package com.koona.invoise.core.repository;
 
+import com.koona.invoise.core.entity.Customer;
 import com.koona.invoise.core.entity.Invoice;
 import org.springframework.data.jpa.repository.EntityGraph;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
 
 /**
  *
  * @author Steve KOUNA
  */
-public interface InvoiceRepositoryInterface extends CrudRepository<Invoice, String> {
-    @EntityGraph(value = "invoice.customer", type = EntityGraph.EntityGraphType.FETCH)
-    Iterable<Invoice> findAll();
+public interface CustomerRepositoryInterface extends CrudRepository<Customer, String> {
     /*
     Invoice create(Invoice invoice);
     List<Invoice> list();

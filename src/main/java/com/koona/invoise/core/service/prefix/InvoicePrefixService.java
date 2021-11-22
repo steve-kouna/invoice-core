@@ -6,11 +6,13 @@
 package com.koona.invoise.core.service.prefix;
 
 import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.repository.CustomerRepositoryInterface;
 import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -37,9 +39,13 @@ public class InvoicePrefixService implements InvoiceServiceInterface {
     
     @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
+
+    @Autowired
+    private CustomerRepositoryInterface customerRepository;
     
-    
+    @Transactional
     public Invoice create(Invoice invoice) {
+        customerRepository.save(invoice.getCustomer());
         invoiceRepository.save(invoice);
         return invoice;
     }
