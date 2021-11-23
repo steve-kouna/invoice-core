@@ -1,5 +1,7 @@
-package com.koona.invoise.core.entity;
+package com.koona.invoise.core.entity.product;
 
+
+import com.koona.invoise.core.entity.product.Category;
 
 import javax.persistence.*;
 import java.util.ArrayList;

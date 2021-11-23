@@ -5,9 +5,7 @@
  */
 package com.koona.invoise.core.repository;
 
-import com.koona.invoise.core.entity.Customer;
-import com.koona.invoise.core.entity.Invoice;
-import org.springframework.data.jpa.repository.EntityGraph;
+import com.koona.invoise.core.entity.customer.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 /**

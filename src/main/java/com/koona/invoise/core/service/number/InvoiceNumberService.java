@@ -5,7 +5,7 @@
  */
 package com.koona.invoise.core.service.number;
 
-import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.entity.invoice.Invoice;
 import com.koona.invoise.core.repository.CustomerRepositoryInterface;
 import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 import com.koona.invoise.core.service.InvoiceServiceInterface;

@@ -1,4 +1,6 @@
-package com.koona.invoise.core.entity;
+package com.koona.invoise.core.entity.customer;
+
+import com.koona.invoise.core.entity.customer.Address;
 
 import javax.persistence.*;
 

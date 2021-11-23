@@ -6,8 +6,8 @@
 package com.koona.invoise.core.controller.keyboard;
 
 import com.koona.invoise.core.controller.InvoiceControllerInterface;
-import com.koona.invoise.core.entity.Customer;
-import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.entity.customer.Customer;
+import com.koona.invoise.core.entity.invoice.Invoice;
 import com.koona.invoise.core.service.InvoiceServiceInterface;
 import java.util.Scanner;
 

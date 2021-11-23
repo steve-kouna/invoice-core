@@ -5,7 +5,7 @@
  */
 package com.koona.invoise.core.repository.memory;
 
-import com.koona.invoise.core.entity.Invoice;
+import com.koona.invoise.core.entity.invoice.Invoice;
 import com.koona.invoise.core.repository.InvoiceRepositoryInterface;
 import java.util.ArrayList;
 import java.util.List;
